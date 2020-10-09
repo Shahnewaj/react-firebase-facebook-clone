@@ -10,13 +10,15 @@ import React from "react";
 import "./Post.css";
 
 function Post({ profilePic, image, username, timestamp, message }) {
+  console.log(timestamp);
   return (
     <div className="post">
       <div className="post_top">
         <Avatar src={profilePic} className="post_avatar" />
         <div className="post_topInfo">
           <h3>{username}</h3>
-          <p>timestamp ..</p>
+
+          <p>{new Date(timestamp).toDateString()}</p>
         </div>
       </div>
       <div className="post_bottom">
